@@ -1,16 +1,20 @@
 div.content {
-  /* The display of content is enabled using jQuery so that the slideshow content won't display unless javascript is enabled. */
+  /* The display of content is enabled using jQuery so that the
+     slideshow content won't display unless javascript is enabled. */
   display: none;
   float: right;
   width: 550px;
 }
 
-div.content a, div.navigation a {
+div.content a,
+div.navigation a {
   text-decoration: none;
   color: #777;
 }
 
-div.content a:focus, div.content a:hover, div.content a:active {
+div.content a:focus,
+div.content a:hover,
+div.content a:active {
   text-decoration: underline;
 }
 
@@ -34,7 +38,9 @@ div.nav-controls {
 div.slideshow-container {
   position: relative;
   clear: both;
-  height: 502px; /* This should be set to be at least the height of the largest image in the slideshow */
+  /* This should be set to be at least the height of the largest image
+     in the slideshow */
+  height: 502px;
 }
 
 div.loader {
@@ -45,7 +51,9 @@ div.loader {
   background-repeat: no-repeat;
   background-position: center;
   width: 550px;
-  height: 502px; /* This should be set to be at least the height of the largest image in the slideshow */
+  /* This should be set to be at least the height of the largest image
+     in the slideshow */
+  height: 502px;
 }
 
 div.slideshow {
@@ -62,12 +70,18 @@ div.slideshow span.image-wrapper {
 div.slideshow a.advance-link {
   display: block;
   width: 550px;
-  height: 502px; /* This should be set to be at least the height of the largest image in the slideshow */
-  line-height: 502px; /* This should be set to be at least the height of the largest image in the slideshow */
+  /* This should be set to be at least the height of the largest image
+     in the slideshow */
+  height: 502px;
+  /* This should be set to be at least the height of the largest image
+     in the slideshow */
+  line-height: 502px;
   text-align: center;
 }
 
-div.slideshow a.advance-link:hover, div.slideshow a.advance-link:active, div.slideshow a.advance-link:visited {
+div.slideshow a.advance-link:hover,
+div.slideshow a.advance-link:active,
+div.slideshow a.advance-link:visited {
   text-decoration: none;
 }
 
@@ -109,7 +123,8 @@ div.image-desc {
 }
 
 div.navigation {
-  /* The navigation style is set using jQuery so that the javascript specific styles won't be applied unless javascript is enabled. */
+  /* The navigation style is set using jQuery so that the javascript
+     specific styles won't be applied unless javascript is enabled. */
 }
 
 ul.thumbs {
@@ -157,7 +172,9 @@ div.navigation div.bottom {
   margin-top: 12px;
 }
 
-div.pagination a, div.pagination span.current, div.pagination span.ellipsis {
+div.pagination a,
+div.pagination span.current,
+div.pagination span.ellipsis {
   display: block;
   float: left;
   margin-right: 2px;
