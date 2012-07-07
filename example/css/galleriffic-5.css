@@ -226,8 +226,3 @@ div.pagination span.ellipsis {
   border: none;
   padding: 5px 0 3px 2px;
 }
-
-div.gallery-gutter {
-  clear: both;
-  padding-bottom: 20px;
-}
