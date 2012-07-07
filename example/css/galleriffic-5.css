@@ -1,6 +1,7 @@
 div#container {
   overflow: hidden;
 }
+
 div.content {
   display: none;
   clear: both;
@@ -9,6 +10,7 @@ div.content {
 div.content a, div.navigation a {
   text-decoration: none;
 }
+
 div.content a:hover, div.content a:active {
   text-decoration: underline;
 }
@@ -22,12 +24,15 @@ div.controls {
   margin-top: 5px;
   height: 23px;
 }
+
 div.controls a {
   padding: 5px;
 }
+
 div.ss-controls {
   float: left;
 }
+
 div.nav-controls {
   float: right;
 }
@@ -59,12 +64,14 @@ div.loader {
   background-repeat: no-repeat;
   background-position: center;
 }
+
 div.slideshow span.image-wrapper {
   display: block;
   position: absolute;
   top: 30px;
   left: 0;
 }
+
 div.slideshow a.advance-link {
   display: block;
   line-height: 502px; /* This should be set to be at least the height of the largest image in the slideshow with padding */
@@ -76,6 +83,7 @@ div.slideshow a.advance-link:active,
 div.slideshow a.advance-link:visited {
   text-decoration: none;
 }
+
 div.slideshow a.advance-link:focus {
   outline: none;
 }
@@ -84,11 +92,13 @@ div.slideshow img {
   border-style: solid;
   border-width: 1px;
 }
+
 div.caption-container {
   float: right;
   position: relative;
   margin-top: 30px;
 }
+
 span.image-caption {
   display: block;
   position: absolute;
@@ -108,29 +118,35 @@ div.image-title {
   font-weight: bold;
   font-size: 1.4em;
 }
+
 div.image-desc {
   line-height: 1.3em;
   padding-top: 12px;
 }
+
 div.download {
   margin-top: 8px;
 }
+
 div.photo-index {
   position: absolute;
   bottom: 0;
   left: 0;
   padding: 0 12px;
 }
+
 div.navigation-container {
   float: left;
   position: relative;
   left: 50%;
 }
+
 div.navigation {
   float: left;
   position: relative;
   left: -50%;
 }
+
 div.navigation a.pageLink {
   display: block;
   position: relative;
@@ -140,6 +156,7 @@ div.navigation a.pageLink {
   background-position:center center;
   background-repeat:no-repeat;
 }
+
 div.navigation a.pageLink:focus {
   outline: none;
 }
@@ -150,28 +167,34 @@ ul.thumbs {
   margin: 0;
   padding: 0;
 }
+
 ul.thumbs li {
   float: left;
   padding: 0;
   margin: 2px;
   list-style: none;
 }
+
 a.thumb {
   padding: 1px;
   display: block;
 }
+
 a.thumb:focus {
   outline: none;
 }
+
 ul.thumbs img {
   border: none;
   display: block;
 }
+
 div.pagination {
   clear: both;
   position: relative;
   left: -50%;
 }
+
 div.pagination a, div.pagination span.current, div.pagination span.ellipsis {
   position: relative;
   display: block;
@@ -180,12 +203,15 @@ div.pagination a, div.pagination span.current, div.pagination span.ellipsis {
   padding: 4px 7px 2px 7px;
   border: 1px solid #ccc;
 }
+
 div.pagination a:hover {
   text-decoration: none;
 }
+
 div.pagination span.current {
   font-weight: bold;
 }
+
 div.pagination span.ellipsis {
   border: none;
   padding: 5px 0 3px 2px;
