@@ -344,7 +344,7 @@
 				</div>
 				<!-- End Advanced Gallery Html Containers -->
 
-				<!-- Add image link -->				
+				<!-- Add image link -->
 				<div style="clear: left; float: left; padding-top: 10px;">
 					<a href="#addImage" id="addImageLink">Insert Image into Position 5</a>
 					<br />
@@ -377,7 +377,7 @@
 				var captionOpacity = 0.0;
 				$('#captionToggle a').click(function(e) {
 					var link = $(this);
-					
+
 					var isOff = link.hasClass('off');
 					var removeClass = isOff ? 'off' : 'on';
 					var addClass = isOff ? 'on' : 'off';
@@ -386,10 +386,10 @@
 
 					link.removeClass(removeClass).addClass(addClass).text(linkText).attr('title', linkText);
 					$('#caption span.image-caption').fadeTo(1000, captionOpacity);
-					
+
 					e.preventDefault();
 				});
-				
+
 				// Initialize Advanced Galleriffic Gallery
 				var gallery = $('#thumbs').galleriffic({
 					delay:                     2500,
@@ -427,7 +427,7 @@
 					onTransitionIn:            function(slide, caption, isSync) {
 						var duration = this.getDefaultTransitionDuration(isSync);
 						slide.fadeTo(duration, 1.0);
-						
+
 						// Position the caption at the bottom of the image and set its opacity
 						var slideImage = slide.find('img');
 						caption.width(slideImage.width())
@@ -471,7 +471,7 @@
 				}
 
 				// Initialize history plugin.
-				// The callback is called at once by present location.hash. 
+				// The callback is called at once by present location.hash.
 				$.historyInit(pageload, "advanced.html");
 
 				// set onlick event for buttons using the jQuery 1.3 live method
@@ -481,8 +481,8 @@
 					var hash = this.href;
 					hash = hash.replace(/^.*#/, '');
 
-					// moves to a new page. 
-					// pageload is called at once. 
+					// moves to a new page.
+					// pageload is called at once.
 					// hash don't contain "#", "?"
 					$.historyLoad(hash);
 
@@ -509,32 +509,32 @@
 								</div>																									\
 							</div>																										\
 						</li>', 5);
-					
+
 					e.preventDefault();
 				});
-				
+
 				/****************************************************************************************/
-				
+
 				/***************** Attach click event to the Remove Image By Index Link *****************/
-				
+
 				$('#removeImageByIndexLink').click(function(e) {
 					if (!gallery.removeImageByIndex(5))
 						alert('There is no longer an image at position 5 to remove!');
 
 					e.preventDefault();
 				});
-				
+
 				/****************************************************************************************/
 
 				/***************** Attach click event to the Remove Image By Hash Link ******************/
-				
+
 				$('#removeImageByHashLink').click(function(e) {
 					if (!gallery.removeImageByHash('lizard'))
 						alert('The lizard image has already been removed!');
 
 					e.preventDefault();
 				});
-				
+
 				/****************************************************************************************/
 			});
 		</script>

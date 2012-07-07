@@ -39,7 +39,7 @@
 
 			var gallery = imageData.gallery;
 			gallery.gotoImage(imageData);
-			
+
 			return true;
 		},
 
@@ -140,7 +140,7 @@
 			// @param {Boolean} insert Specifies whether the the image is appended to the end or inserted into the gallery.
 			// @param {Integer} position The index within the gallery where the item shouold be added.
 			addImage: function(listItem, thumbExists, insert, position) {
-				var $li = ( typeof listItem === "string" ) ? $(listItem) : listItem;				
+				var $li = ( typeof listItem === "string" ) ? $(listItem) : listItem;
 				var $aThumb = $li.find('a.thumb');
 				var slideUrl = $aThumb.attr('href');
 				var title = $aThumb.attr('title');
@@ -158,7 +158,7 @@
 				// Set position to end when not specified
 				if (!insert)
 					position = this.data.length;
-				
+
 				var imageData = {
 					title:title,
 					slideUrl:slideUrl,
@@ -190,7 +190,7 @@
 							$thumbsUl.children(':eq('+position+')').before($li);
 						else
 							$thumbsUl.append($li);
-						
+
 						if (gallery.onImageAdded)
 							gallery.onImageAdded(imageData, $li);
 					});
@@ -215,13 +215,13 @@
 			removeImageByIndex: function(index) {
 				if (index < 0 || index >= this.data.length)
 					return false;
-				
+
 				var imageData = this.data[index];
 				if (!imageData)
 					return false;
-				
+
 				this.removeImage(imageData);
-				
+
 				return true;
 			},
 
@@ -233,13 +233,13 @@
 			// Removes an image from the gallery.
 			removeImage: function(imageData) {
 				var index = imageData.index;
-				
+
 				// Remove the image from the gallery data array
 				this.data.splice(index, 1);
-				
+
 				// Remove the global registration
 				delete allImages[''+imageData.hash];
-				
+
 				// Remove the image's list item from the DOM
 				this.updateThumbs(function() {
 					var $li = gallery.find('ul.thumbs')
@@ -261,7 +261,7 @@
 				for (i = startIndex; i < this.data.length; i++) {
 					this.data[i].index = i;
 				}
-				
+
 				return this;
 			},
 
@@ -282,7 +282,7 @@
 			// Initalizes the image preloader
 			preloadInit: function() {
 				if (this.preloadAhead == 0) return this;
-				
+
 				this.preloadStartIndex = this.currentImage.index;
 				var nextIndex = this.getNextIndex(this.preloadStartIndex);
 				return this.preloadRecursive(this.preloadStartIndex, nextIndex);
@@ -324,11 +324,11 @@
 
 				// If already loaded, continue
 				if (imageData.image)
-					return this.preloadNext(startIndex, currentIndex); 
-				
+					return this.preloadNext(startIndex, currentIndex);
+
 				// Preload the image
 				var image = new Image();
-				
+
 				image.onload = function() {
 					imageData.image = this;
 					gallery.preloadNext(startIndex, currentIndex);
@@ -339,7 +339,7 @@
 
 				return this;
 			},
-			
+
 			// Called by preloadRecursive in order to preload the next image after the previous has loaded.
 			// @param {Integer} startIndex The index of the first image the current preloader started on.
 			// @param {Integer} currentIndex The index of the current image to preload.
@@ -389,7 +389,7 @@
 						.attr('href', '#play')
 						.html(this.playLinkText);
 				}
-				
+
 				return this;
 			},
 
@@ -435,7 +435,7 @@
 
 			// Advances the gallery to the next image.
 			// @param {Boolean} dontPause Specifies whether to pause the slideshow.
-			// @param {Boolean} bypassHistory Specifies whether to delegate navigation to the history plugin when history is enabled.  
+			// @param {Boolean} bypassHistory Specifies whether to delegate navigation to the history plugin when history is enabled.
 			next: function(dontPause, bypassHistory) {
 				this.gotoIndex(this.getNextIndex(this.currentImage.index), dontPause, bypassHistory);
 				return this;
@@ -471,10 +471,10 @@
 				var page = this.getCurrentPage();
 				if (page > 0) {
 					var startIndex = page * this.numThumbs;
-					var prevPage = startIndex - this.numThumbs;				
+					var prevPage = startIndex - this.numThumbs;
 					this.gotoIndex(prevPage, dontPause, bypassHistory);
 				}
-				
+
 				return this;
 			},
 
@@ -485,12 +485,12 @@
 			gotoIndex: function(index, dontPause, bypassHistory) {
 				if (!dontPause)
 					this.pause();
-				
+
 				if (index < 0) index = 0;
 				else if (index >= this.data.length) index = this.data.length-1;
-				
+
 				var imageData = this.data[index];
-				
+
 				if (!bypassHistory && this.enableHistory)
 					$.historyLoad(String(imageData.hash));  // At the moment, historyLoad only accepts string arguments
 				else
@@ -506,12 +506,12 @@
 
 				if (this.onSlideChange)
 					this.onSlideChange(this.currentImage.index, index);
-				
+
 				this.currentImage = imageData;
 				this.preloadRelocate(index);
-				
+
 				this.refresh();
-				
+
 				return this;
 			},
 
@@ -595,7 +595,7 @@
 
 				if (!imageData.image) {
 					var image = new Image();
-					
+
 					// Wire up mainImage onload event
 					image.onload = function() {
 						imageData.image = this;
@@ -629,13 +629,13 @@
 				var newSlide = this.$imageContainer
 					.append('<span class="image-wrapper current"><a class="advance-link" rel="history" href="#'+this.data[nextIndex].hash+'" title="'+imageData.title+'">&nbsp;</a></span>')
 					.find('span.current').css('opacity', '0');
-				
+
 				newSlide.find('a')
 					.append(imageData.image)
 					.click(function(e) {
 						gallery.clickHandler(e, this);
 					});
-				
+
 				var newCaption = 0;
 				if (this.$captionContainer) {
 					// Construct new hidden caption for the image
@@ -658,7 +658,7 @@
 					if (newCaption)
 						newCaption.fadeTo(this.getDefaultTransitionDuration(isSync), 1.0);
 				}
-				
+
 				if (this.isSlideshowRunning) {
 					if (this.slideshowTimeout)
 						clearTimeout(this.slideshowTimeout);
@@ -699,7 +699,7 @@
 					// Call the Post-transition Out Handler
 					if (postTransitionOutHandler)
 						postTransitionOutHandler();
-					
+
 					gallery.rebuildThumbs();
 
 					// Transition In the thumbsContainer
@@ -769,7 +769,7 @@
 
 				// Remove the noscript class from the thumbs container ul
 				$thumbsUl.removeClass('noscript');
-				
+
 				return this;
 			},
 
@@ -786,7 +786,7 @@
 				var page = this.getCurrentPage();
 				var startIndex = page * this.numThumbs;
 				var pagesRemaining = this.maxPagesToShow - 1;
-				
+
 				var pageNum = page - Math.floor((this.maxPagesToShow - 1) / 2) + 1;
 				if (pageNum > 0) {
 					var remainingPageCount = numPages - pageNum;
@@ -810,7 +810,7 @@
 					this.buildPageLink(pager, 0, numPages);
 					if (pageNum > 1)
 						pager.append('<span class="ellipsis">&hellip;</span>');
-					
+
 					pagesRemaining--;
 				}
 
@@ -856,18 +856,18 @@
 					var imageIndex = pageNum*this.numThumbs;
 					pager.append('<a rel="history" href="#'+this.data[imageIndex].hash+'" title="'+pageLabel+'">'+pageLabel+'</a>');
 				}
-				
+
 				return this;
 			}
 		});
 
 		// Now initialize the gallery
 		$.extend(this, defaults, settings);
-		
+
 		// Verify the history plugin is available
 		if (this.enableHistory && !$.historyInit)
 			this.enableHistory = false;
-		
+
 		// Select containers
 		if (this.imageContainerSel) this.$imageContainer = $(this.imageContainerSel);
 		if (this.captionContainerSel) this.$captionContainer = $(this.captionContainerSel);
@@ -875,7 +875,7 @@
 
 		// Initialize the thumbails
 		this.initializeThumbs();
-		
+
 		if (this.maxPagesToShow < 3)
 			this.maxPagesToShow = 3;
 
@@ -890,7 +890,7 @@
 		// Setup controls
 		if (this.controlsContainerSel) {
 			this.$controlsContainer = $(this.controlsContainerSel).empty();
-			
+
 			if (this.renderSSControls) {
 				if (this.autoStart) {
 					this.$controlsContainer
@@ -907,7 +907,7 @@
 						return false;
 					});
 			}
-		
+
 			if (this.renderNavControls) {
 				this.$controlsContainer
 					.append('<div class="nav-controls"><a class="prev" rel="history" title="'+this.prevLinkText+'">'+this.prevLinkText+'</a><a class="next" rel="history" title="'+this.nextLinkText+'">'+this.nextLinkText+'</a></div>')
