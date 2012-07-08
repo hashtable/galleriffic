@@ -20,6 +20,7 @@ div.content a:active {
 div.navigation a.pageLink {
   height: 77px;
   line-height: 77px;
+  visibility: hidden;
 }
 
 div.controls {
