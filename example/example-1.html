@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/galleriffic-1.css" type="text/css" />
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery.galleriffic.js"></script>
+    <script type="text/javascript" src="js/example-1.js"></script>
   </head>
   <body>
     <div id="page">
@@ -126,18 +127,5 @@
       </div>
     </div>
     <div id="footer">&copy; 2009 Trent Foley</div>
-    <script type="text/javascript">
-      // We only want these styles applied when javascript is enabled
-      $('div.navigation').css({'width' : '300px', 'float' : 'left'});
-      $('div.content').css('display', 'block');
-
-      $(document).ready(function() {
-      // Initialize Minimal Galleriffic Gallery
-      $('#thumbs').galleriffic({
-      imageContainerSel:      '#slideshow',
-      controlsContainerSel:   '#controls'
-      });
-      });
-    </script>
   </body>
 </html>
