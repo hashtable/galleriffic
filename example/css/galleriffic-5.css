@@ -23,12 +23,12 @@ div.navigation a.pageLink {
   visibility: hidden;
 }
 
-div.controls {
+div#controls {
   margin-top: 5px;
   height: 23px;
 }
 
-div.controls a {
+div#controls a {
   padding: 5px;
 }
 
@@ -41,15 +41,15 @@ div.nav-controls {
 }
 
 div.slideshow-container,
-div.loader,
-div.slideshow a.advance-link {
+div#loading,
+div#slideshow a.advance-link {
   /* This should be set to be at least the width of the largest image
      in the slideshow with padding */
   width: 510px;
 }
 
-div.loader,
-div.slideshow a.advance-link,
+div#loading,
+div#slideshow a.advance-link,
 div#caption {
   /* This should be set to be at least the height of the largest image
      in the slideshow with padding */
@@ -63,7 +63,7 @@ div.slideshow-container {
   height: 532px;
 }
 
-div.loader {
+div#loading {
   position: absolute;
   top: 0;
   left: 0;
@@ -72,14 +72,14 @@ div.loader {
   background-position: center;
 }
 
-div.slideshow span.image-wrapper {
+div#slideshow span.image-wrapper {
   display: block;
   position: absolute;
   top: 30px;
   left: 0;
 }
 
-div.slideshow a.advance-link {
+div#slideshow a.advance-link {
   display: block;
   /* This should be set to be at least the height of the largest image
      in the slideshow with padding */
@@ -87,17 +87,17 @@ div.slideshow a.advance-link {
   text-align: center;
 }
 
-div.slideshow a.advance-link:hover,
-div.slideshow a.advance-link:active,
-div.slideshow a.advance-link:visited {
+div#slideshow a.advance-link:hover,
+div#slideshow a.advance-link:active,
+div#slideshow a.advance-link:visited {
   text-decoration: none;
 }
 
-div.slideshow a.advance-link:focus {
+div#slideshow a.advance-link:focus {
   outline: none;
 }
 
-div.slideshow img {
+div#slideshow img {
   border-style: solid;
   border-width: 1px;
 }

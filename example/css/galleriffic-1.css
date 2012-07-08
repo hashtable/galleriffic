@@ -18,12 +18,12 @@ div.content a:active {
   text-decoration: underline;
 }
 
-div.controls {
+div#controls {
   margin-top: 5px;
   height: 23px;
 }
 
-div.controls a {
+div#controls a {
   padding: 5px;
 }
 
@@ -43,7 +43,7 @@ div.slideshow-container {
   height: 502px;
 }
 
-div.loader {
+div#loading {
   position: absolute;
   top: 0;
   left: 0;
@@ -56,17 +56,17 @@ div.loader {
   height: 502px;
 }
 
-div.slideshow {
+div#slideshow {
 }
 
-div.slideshow span.image-wrapper {
+div#slideshow span.image-wrapper {
   display: block;
   position: absolute;
   top: 0;
   left: 0;
 }
 
-div.slideshow a.advance-link {
+div#slideshow a.advance-link {
   display: block;
   width: 550px;
   /* This should be set to be at least the height of the largest image
@@ -78,13 +78,13 @@ div.slideshow a.advance-link {
   text-align: center;
 }
 
-div.slideshow a.advance-link:hover,
-div.slideshow a.advance-link:active,
-div.slideshow a.advance-link:visited {
+div#slideshow a.advance-link:hover,
+div#slideshow a.advance-link:active,
+div#slideshow a.advance-link:visited {
   text-decoration: none;
 }
 
-div.slideshow img {
+div#slideshow img {
   vertical-align: middle;
   border: 1px solid #ccc;
 }

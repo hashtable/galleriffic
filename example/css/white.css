@@ -50,11 +50,11 @@ div.navigation a.next {
   background-image: url(nextPageArrow.gif);
 }
 
-div.loader {
+div#loading {
   background-image: url(loader.gif);
 }
 
-div.slideshow img {
+div#slideshow img {
   border-color: #ccc;
 }
 
