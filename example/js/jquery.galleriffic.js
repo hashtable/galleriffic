@@ -339,7 +339,8 @@
                 // Check if startIndex has been relocated
                 if (startIndex != this.preloadStartIndex) {
                     var nextIndex = this.getNextIndex(this.preloadStartIndex);
-                    return this.preloadRecursive(this.preloadStartIndex, nextIndex);
+                    return this.preloadRecursive(this.preloadStartIndex,
+                                                 nextIndex);
                 }
 
                 var gallery = this;
@@ -348,10 +349,13 @@
                 var preloadCount = currentIndex - startIndex;
                 if (preloadCount < 0)
                     preloadCount = this.data.length-1-startIndex+currentIndex;
-                if (this.preloadAhead >= 0 && preloadCount > this.preloadAhead) {
+                if (this.preloadAhead >= 0
+                    && preloadCount > this.preloadAhead) {
                     // Do this in order to keep checking for relocated
                     // start index
-                    setTimeout(function() { gallery.preloadRecursive(startIndex, currentIndex); }, 500);
+                    setTimeout(function() {
+                        gallery.preloadRecursive(startIndex, currentIndex);
+                    }, 500);
                     return this;
                 }
 
@@ -390,7 +394,9 @@
                 } else {
                     // Use setTimeout to free up thread
                     var gallery = this;
-                    setTimeout(function() { gallery.preloadRecursive(startIndex, nextIndex); }, 100);
+                    setTimeout(function() {
+                        gallery.preloadRecursive(startIndex, nextIndex);
+                    }, 100);
                 }
 
                 return this;
@@ -427,7 +433,8 @@
 
                 if (this.$controlsContainer) {
                     this.$controlsContainer
-                        .find('div.ss-controls a').removeClass().addClass('play')
+                        .find('div.ss-controls a').removeClass()
+                        .addClass('play')
                         .attr('title', this.playLinkText)
                         .attr('href', '#play')
                         .html(this.playLinkText);
@@ -603,15 +610,22 @@
                 // Update Controls
                 if (this.$controlsContainer) {
                     this.$controlsContainer
-                        .find('div.nav-controls a.prev').attr('href', '#'+this.data[this.getPrevIndex(index)].hash).end()
-                        .find('div.nav-controls a.next').attr('href', '#'+this.data[this.getNextIndex(index)].hash);
+                        .find('div.nav-controls a.prev')
+                        .attr('href',
+                              '#'+this.data[this.getPrevIndex(index)].hash)
+                        .end()
+                        .find('div.nav-controls a.next')
+                        .attr('href',
+                              '#'+this.data[this.getNextIndex(index)].hash);
                 }
 
-                var previousSlide = this.$imageContainer.find('span.current').addClass('previous').removeClass('current');
+                var previousSlide = this.$imageContainer.find('span.current')
+                    .addClass('previous').removeClass('current');
                 var previousCaption = 0;
 
                 if (this.$captionContainer) {
-                    previousCaption = this.$captionContainer.find('span.current').addClass('previous').removeClass('current');
+                    previousCaption = this.$captionContainer.find('span.current')
+                        .addClass('previous').removeClass('current');
                 }
 
                 // Perform transitions simultaneously if
@@ -635,7 +649,8 @@
                         previousCaption.remove();
 
                     if (!isSync) {
-                        if (imageData.image && imageData.hash == gallery.data[gallery.currentImage.index].hash) {
+                        if (imageData.image
+                            && imageData.hash == gallery.data[gallery.currentImage.index].hash) {
                             gallery.buildImage(imageData, isSync);
                         } else {
                             // Show loading container
@@ -652,11 +667,16 @@
                     transitionOutCallback();
                 } else {
                     if (this.onTransitionOut) {
-                        this.onTransitionOut(previousSlide, previousCaption, isSync, transitionOutCallback);
+                        this.onTransitionOut(previousSlide, previousCaption,
+                                             isSync, transitionOutCallback);
                     } else {
-                        previousSlide.fadeTo(this.getDefaultTransitionDuration(isSync), 0.0, transitionOutCallback);
+                        previousSlide.fadeTo(
+                            this.getDefaultTransitionDuration(isSync),
+                            0.0,
+                            transitionOutCallback);
                         if (previousCaption)
-                            previousCaption.fadeTo(this.getDefaultTransitionDuration(isSync), 0.0);
+                            previousCaption.fadeTo(
+                                this.getDefaultTransitionDuration(isSync), 0.0);
                     }
                 }
 
@@ -674,7 +694,9 @@
                         // Only build image if the out transition has
                         // completed and we are still on the same
                         // image hash
-                        if (!isTransitioning && imageData.hash == gallery.data[gallery.currentImage.index].hash) {
+                        if (!isTransitioning
+                            && imageData.hash
+                               == gallery.data[gallery.currentImage.index].hash) {
                             gallery.buildImage(imageData, isSync);
                         }
                     };
@@ -705,7 +727,11 @@
 
                 // Construct new hidden span for the image
                 var newSlide = this.$imageContainer
-                    .append('<span class="image-wrapper current"><a class="advance-link" rel="history" href="#'+this.data[nextIndex].hash+'" title="'+imageData.title+'">&nbsp;</a></span>')
+                    .append('<span class="image-wrapper current">'
+                            + '<a class="advance-link" rel="history" href="#'
+                            + this.data[nextIndex].hash
+                            + '" title="'
+                            + imageData.title + '">&nbsp;</a></span>')
                     .find('span.current').css('opacity', '0');
 
                 newSlide.find('a')
@@ -732,16 +758,19 @@
                 if (this.onTransitionIn) {
                     this.onTransitionIn(newSlide, newCaption, isSync);
                 } else {
-                    newSlide.fadeTo(this.getDefaultTransitionDuration(isSync), 1.0);
+                    newSlide.fadeTo(
+                        this.getDefaultTransitionDuration(isSync), 1.0);
                     if (newCaption)
-                        newCaption.fadeTo(this.getDefaultTransitionDuration(isSync), 1.0);
+                        newCaption.fadeTo(
+                            this.getDefaultTransitionDuration(isSync), 1.0);
                 }
 
                 if (this.isSlideshowRunning) {
                     if (this.slideshowTimeout)
                         clearTimeout(this.slideshowTimeout);
 
-                    this.slideshowTimeout = setTimeout(function() { gallery.ssAdvance(); }, this.delay);
+                    this.slideshowTimeout = setTimeout(function() {
+                        gallery.ssAdvance(); }, this.delay);
                 }
 
                 return this;
@@ -814,7 +843,9 @@
                 if (this.enableTopPager) {
                     var $topPager = this.find('div.top');
                     if ($topPager.length == 0)
-                        $topPager = this.prepend('<div class="top pagination"></div>').find('div.top');
+                        $topPager = this.prepend(
+                            '<div class="top pagination"></div>')
+                        .find('div.top');
                     else
                         $topPager.empty();
 
@@ -826,7 +857,9 @@
                 if (this.enableBottomPager) {
                     var $bottomPager = this.find('div.bottom');
                     if ($bottomPager.length == 0)
-                        $bottomPager = this.append('<div class="bottom pagination"></div>').find('div.bottom');
+                        $bottomPager = this.append(
+                            '<div class="bottom pagination"></div>')
+                        .find('div.bottom');
                     else
                         $bottomPager.empty();
 
@@ -891,7 +924,10 @@
                 // Prev Page Link
                 if (page > 0) {
                     var prevPage = startIndex - this.numThumbs;
-                    pager.append('<a rel="history" href="#'+this.data[prevPage].hash+'" title="'+this.prevPageLinkText+'">'+this.prevPageLinkText+'</a>');
+                    pager.append('<a rel="history" href="#'
+                                 + this.data[prevPage].hash
+                                 + '" title="' +this.prevPageLinkText +'">'
+                                 + this.prevPageLinkText + '</a>');
                 }
 
                 // Create First Page link if needed
@@ -922,7 +958,10 @@
                 // Next Page Link
                 var nextPage = startIndex + this.numThumbs;
                 if (nextPage < this.data.length) {
-                    pager.append('<a rel="history" href="#'+this.data[nextPage].hash+'" title="'+this.nextPageLinkText+'">'+this.nextPageLinkText+'</a>');
+                    pager.append('<a rel="history" href="#'
+                                 + this.data[nextPage].hash
+                                 + '" title="' + this.nextPageLinkText + '">'
+                                 + this.nextPageLinkText + '</a>');
                 }
 
                 pager.find('a').click(function(e) {
@@ -947,7 +986,9 @@
                     pager.append('<span class="current">'+pageLabel+'</span>');
                 else if (pageNum < numPages) {
                     var imageIndex = pageNum*this.numThumbs;
-                    pager.append('<a rel="history" href="#'+this.data[imageIndex].hash+'" title="'+pageLabel+'">'+pageLabel+'</a>');
+                    pager.append('<a rel="history" href="#'
+                                 + this.data[imageIndex].hash + '" title="'
+                                 + pageLabel + '">'+pageLabel+'</a>');
                 }
 
                 return this;
@@ -962,9 +1003,12 @@
             this.enableHistory = false;
 
         // Select containers
-        if (this.imageContainerSel) this.$imageContainer = $(this.imageContainerSel);
-        if (this.captionContainerSel) this.$captionContainer = $(this.captionContainerSel);
-        if (this.loadingContainerSel) this.$loadingContainer = $(this.loadingContainerSel);
+        if (this.imageContainerSel)
+            this.$imageContainer = $(this.imageContainerSel);
+        if (this.captionContainerSel)
+            this.$captionContainer = $(this.captionContainerSel);
+        if (this.loadingContainerSel)
+            this.$loadingContainer = $(this.loadingContainerSel);
 
         // Initialize the thumbails
         this.initializeThumbs();
@@ -987,10 +1031,16 @@
             if (this.renderSSControls) {
                 if (this.autoStart) {
                     this.$controlsContainer
-                        .append('<div class="ss-controls"><a href="#pause" class="pause" title="'+this.pauseLinkText+'">'+this.pauseLinkText+'</a></div>');
+                        .append('<div class="ss-controls">'
+                                + '<a href="#pause" class="pause" title="'
+                                + this.pauseLinkText + '">'
+                                + this.pauseLinkText + '</a></div>');
                 } else {
                     this.$controlsContainer
-                        .append('<div class="ss-controls"><a href="#play" class="play" title="'+this.playLinkText+'">'+this.playLinkText+'</a></div>');
+                        .append('<div class="ss-controls">'
+                                + '<a href="#play" class="play" title="'
+                                + this.playLinkText + '">'
+                                + this.playLinkText + '</a></div>');
                 }
 
                 this.$controlsContainer.find('div.ss-controls a')
@@ -1003,7 +1053,12 @@
 
             if (this.renderNavControls) {
                 this.$controlsContainer
-                    .append('<div class="nav-controls"><a class="prev" rel="history" title="'+this.prevLinkText+'">'+this.prevLinkText+'</a><a class="next" rel="history" title="'+this.nextLinkText+'">'+this.nextLinkText+'</a></div>')
+                    .append('<div class="nav-controls">'
+                            + '<a class="prev" rel="history" title="'
+                            + this.prevLinkText + '">' + this.prevLinkText
+                            + '</a><a class="next" rel="history" title="'
+                            + this.nextLinkText + '">' + this.nextLinkText
+                            + '</a></div>')
                     .find('div.nav-controls a')
                     .click(function(e) {
                         gallery.clickHandler(e, this);
