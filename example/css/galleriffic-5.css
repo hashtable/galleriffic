@@ -49,7 +49,7 @@ div.slideshow a.advance-link {
 
 div.loader,
 div.slideshow a.advance-link,
-div.caption-container {
+div#caption {
   /* This should be set to be at least the height of the largest image
      in the slideshow with padding */
   height: 502px;
@@ -101,7 +101,7 @@ div.slideshow img {
   border-width: 1px;
 }
 
-div.caption-container {
+div#caption {
   float: right;
   position: relative;
   margin-top: 30px;
@@ -114,7 +114,7 @@ span.image-caption {
   left: 0;
 }
 
-div.caption-container, span.image-caption {
+div#caption, span.image-caption {
   width: 334px;
 }
 

@@ -94,7 +94,7 @@ div.download {
   float: right;
 }
 
-div.caption-container {
+div#caption {
   position: relative;
   clear: left;
   height: 75px;
