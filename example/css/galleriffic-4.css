@@ -7,7 +7,7 @@ div.content {
 }
 
 div.content a,
-div.navigation a {
+#thumbs a {
   text-decoration: none;
   color: #777;
 }
@@ -119,7 +119,7 @@ div.image-desc {
   padding-top: 12px;
 }
 
-div.navigation {
+#thumbs {
   /* The navigation style is set using jQuery so that the javascript
      specific styles won't be applied unless javascript is enabled. */
 }
@@ -160,12 +160,12 @@ div.pagination {
   clear: both;
 }
 
-div.navigation div.top {
+#thumbs div.top {
   margin-bottom: 12px;
   height: 11px;
 }
 
-div.navigation div.bottom {
+#thumbs div.bottom {
   margin-top: 12px;
 }
 

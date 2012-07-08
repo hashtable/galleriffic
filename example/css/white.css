@@ -42,11 +42,11 @@ div.photo-index {
   color: #777;
 }
 
-div.navigation a.prev {
+#thumbs a.prev {
   background-image: url(prevPageArrow.gif);
 }
 
-div.navigation a.next {
+#thumbs a.next {
   background-image: url(nextPageArrow.gif);
 }
 

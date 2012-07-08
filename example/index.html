@@ -146,7 +146,7 @@ jQuery(document).ready(function($) {
         <h4>How can I change the number of thumbnail columns?</h4>
         <p>With the stylesheet used in these examples, each thumbnail is floated left, and thus as many thumbnails that will fit in the width of the column will be displayed.  If you want fewer or more columns, make the width of the navigation panel smaller or larger.  In all but the last example, I am setting the width using javascript with the following lines in the html page:
           <pre class="jush-js">
-$('div.navigation').css({'width' : '300px', 'float' : 'left'});
+$('#thumbs').css({'width' : '300px', 'float' : 'left'});
 $('div.content').css('display', 'block');
           </pre>
 

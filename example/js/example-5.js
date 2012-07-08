@@ -5,7 +5,7 @@ jQuery(document).ready(function($) {
     // Initially set opacity on thumbs and add additional styling for
     // hover effect on thumbs
     var onMouseOutOpacity = 0.67;
-    $('#thumbs ul.thumbs li, div.navigation a.pageLink').opacityrollover({
+    $('#thumbs ul.thumbs li, #thumbs a.pageLink').opacityrollover({
         mouseOutOpacity: onMouseOutOpacity,
         mouseOverOpacity: 1.0,
         fadeSpeed: 'fast',
