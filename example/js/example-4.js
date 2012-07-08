@@ -117,7 +117,7 @@ jQuery(document).ready(function($) {
     $.historyInit(pageload, "advanced.html");
 
     // set onlick event for buttons using the jQuery 1.3 live method
-    $("a[rel='history']").live('click', function() {
+    $("a[rel='history']").live('click', function(e) {
         if (e.button != 0) return true;
 
         var hash = this.href;
