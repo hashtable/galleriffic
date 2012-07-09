@@ -1,0 +1,107 @@
+div.content {
+  float: none;
+  clear: both;
+  width: auto;
+}
+
+div.content a,
+#thumbs a {
+    color: #f70;
+}
+
+div.slideshow-container,
+div#loading,
+div#slideshow a.advance-link {
+  width: 510px;
+}
+
+div#loading,
+div#slideshow a.advance-link,
+div#caption {
+  height: 502px;
+}
+
+div.slideshow-container {
+  height: 532px;
+  float: left;
+}
+
+div#slideshow span.image-wrapper {
+  top: 30px;
+}
+
+div#slideshow a.advance-link:focus {
+  outline: none;
+}
+
+div#slideshow img {
+  border-style: solid;
+  border-width: 1px;
+  vertical-align: top;
+}
+
+div#caption {
+  float: right;
+  clear: none;
+  position: relative;
+  margin-top: 30px;
+
+}
+
+span.image-caption {
+  top: 0;
+  left: 0;
+}
+
+div#caption, span.image-caption {
+  width: 334px;
+}
+
+div.caption {
+  padding: 0 12px;
+}
+
+div.download {
+  margin-top: 8px;
+  float: none;
+}
+
+div.photo-index {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0 12px;
+}
+
+#thumbs a.pageLink {
+  display: block;
+  position: relative;
+  float: left;
+  margin: 2px;
+  width: 16px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#thumbs a.pageLink:focus {
+  outline: none;
+}
+
+ul.thumbs {
+  position: relative;
+  float: left;
+  clear: none;
+}
+
+ul.thumbs li {
+  float: left;
+  padding: 0;
+  margin: 2px;
+  list-style: none;
+}
+
+a.thumb {
+  padding: 1px;
+  display: block;
+  border: none;
+}
