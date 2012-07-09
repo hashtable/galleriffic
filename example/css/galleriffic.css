@@ -18,6 +18,12 @@ div.content a:active {
   text-decoration: underline;
 }
 
+#thumbs a.pageLink {
+  height: 77px;
+  line-height: 77px;
+  visibility: hidden;
+}
+
 div#controls {
   margin-top: 5px;
   height: 23px;
@@ -56,10 +62,6 @@ div#loading {
   height: 502px;
 }
 
-div#slideshow {
-
-}
-
 div#slideshow span.image-wrapper {
   display: block;
   position: absolute;
@@ -94,18 +96,31 @@ div.download {
   float: right;
 }
 
+div#caption {
+  position: relative;
+  clear: left;
+  height: 75px;
+}
+
+.inline-caption div#caption {
+  position: static;
+}
+
 span.image-caption {
   display: block;
   position: absolute;
 }
 
 div.caption {
-  background-color: #000;
   padding: 12px;
+}
+
+.inline-caption div.caption {
+  background-color: #000;
   color: #ccc;
 }
 
-div.caption a {
+.inline-caption div.caption a {
   color: #fff;
 }
 
@@ -131,20 +146,29 @@ ul.thumbs {
 }
 
 ul.thumbs li {
-  float: left;
   padding: 0;
-  margin: 5px 10px 5px 0;
+  margin: 0;
   list-style: none;
 }
 
-a.thumb {
+.galleriffic-left-thumbs ul.thumbs li {
+  float: left;
+  margin: 5px 10px 5px 0;
+}
+
+.galleriffic-left-thumbs a.thumb {
   padding: 2px;
   display: block;
   border: 1px solid #ccc;
 }
 
-ul.thumbs li.selected a.thumb {
-  background: #000;
+#thumbs ul.thumbs li.selected a.thumb {
+  color: #000;
+  font-weight: bold;
+}
+
+.galleriffic-left-thumbs ul.thumbs li.selected a.thumb {
+  background-color: #000;
 }
 
 a.thumb:focus {
