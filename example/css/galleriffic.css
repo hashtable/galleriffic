@@ -106,7 +106,7 @@ div#caption {
   height: 75px;
 }
 
-.inline-caption div#caption {
+.slideshow-container div#caption {
   position: static;
 }
 
@@ -119,12 +119,12 @@ div.caption {
   padding: 12px;
 }
 
-.inline-caption div.caption {
+.slideshow-container div.caption {
   background-color: #000;
   color: #ccc;
 }
 
-.inline-caption div.caption a {
+.slideshow-container div.caption a {
   color: #fff;
 }
 
