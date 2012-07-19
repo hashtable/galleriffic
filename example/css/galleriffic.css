@@ -160,22 +160,22 @@ ul.thumbs li {
   margin: 5px 10px 5px 0;
 }
 
-.galleriffic-left-thumbs a.thumb {
+.galleriffic-left-thumbs ul.thumbs li > a {
   padding: 2px;
   display: block;
   border: 1px solid #ccc;
 }
 
-#thumbs ul.thumbs li.selected a.thumb {
+#thumbs ul.thumbs li.selected > a {
   color: #000;
   font-weight: bold;
 }
 
-.galleriffic-left-thumbs ul.thumbs li.selected a.thumb {
+.galleriffic-left-thumbs ul.thumbs li.selected > a {
   background-color: #000;
 }
 
-a.thumb:focus {
+ul.thumbs li > a:focus {
   outline: none;
 }
 

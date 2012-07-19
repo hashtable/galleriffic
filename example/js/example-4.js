@@ -97,7 +97,7 @@ jQuery(document).ready(function($) {
 
     $('#addImageLink').click(function(e) {
         gallery.insertImage('<li>                                                                                           \
-<a class="thumb" href="http://farm1.static.flickr.com/79/263120676_2518b40e5b.jpg" title="Dynamically Added Image">\
+<a href="http://farm1.static.flickr.com/79/263120676_2518b40e5b.jpg" title="Dynamically Added Image">\
 <img src="http://farm1.static.flickr.com/79/263120676_2518b40e5b_s.jpg" alt="Dynamically Added Image" />\
 </a>                                                                                                        \
 <div class="caption">                                                                                       \

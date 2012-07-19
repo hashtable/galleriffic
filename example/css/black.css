@@ -58,7 +58,7 @@ div#slideshow img {
   border-color: #333;
 }
 
-ul.thumbs li.selected a.thumb {
+ul.thumbs li.selected > a {
   background: #fff;
 }
 

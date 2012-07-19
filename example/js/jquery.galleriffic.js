@@ -166,7 +166,7 @@
             //     where the item shouold be added.
             addImage: function(listItem, thumbExists, insert, position) {
                 var $li = ( typeof listItem === "string" ) ? $(listItem) : listItem;
-                var $aThumb = $li.find('a.thumb');
+                var $aThumb = $li.find('a:first');
                 var slideUrl = $aThumb.attr('href');
                 var title = $aThumb.attr('title');
                 var $caption = $li.find('.caption').remove();
