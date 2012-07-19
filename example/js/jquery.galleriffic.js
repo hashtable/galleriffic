@@ -88,7 +88,7 @@
         nextLinkText:              'Next',
         nextPageLinkText:          'Next &rsaquo;',
         prevPageLinkText:          '&lsaquo; Prev',
-        enableHistory:             false,
+        enableHistory:             true,
         enableKeyboardNavigation:  true,
         autoStart:                 false,
         syncTransitions:           false,

@@ -33,7 +33,7 @@ jQuery(document).ready(function($) {
         nextLinkText:              'Next Photo ›',
         nextPageLinkText:          'Next ›',
         prevPageLinkText:          '‹ Prev',
-        enableHistory:             true,
+        enableHistory:             false,
         autoStart:                 false,
         syncTransitions:           true,
         defaultTransitionDuration: 900,
