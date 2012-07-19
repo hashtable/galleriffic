@@ -559,12 +559,11 @@
 
                 var imageData = this.data[index];
 
-                if (!bypassHistory && this.enableHistory)
-                    $.historyLoad(String(imageData.hash));
-                    // At the moment, historyLoad only accepts string
-                    // arguments
-                else
+                if (!bypassHistory && this.enableHistory) {
+                    location.hash = '#' + imageData.hash;
+                } else {
                     this.gotoImage(imageData);
+                }
 
                 return this;
             },
@@ -998,10 +997,6 @@
         // Now initialize the gallery
         $.extend(this, defaults, settings);
 
-        // Verify the history plugin is available
-        if (this.enableHistory && !$.historyInit)
-            this.enableHistory = false;
-
         // Select containers
         if (this.imageContainerSel)
             this.$imageContainer = $(this.imageContainerSel);
@@ -1019,6 +1014,18 @@
         this.displayedPage = -1;
         this.currentImage = this.data[0];
         var gallery = this;
+
+        // Set callback for hashchange event
+        if (this.enableHistory) {
+            $(window).bind('hashchange', function (e) {
+                var hash = $.galleriffic.normalizeHash(location.hash);
+                if(hash) {
+                    $.galleriffic.gotoImage(hash);
+                } else {
+                    gallery.gotoIndex(0, false, true);
+                }
+            });
+        }
 
         // Hide the loadingContainer
         if (this.$loadingContainer)
