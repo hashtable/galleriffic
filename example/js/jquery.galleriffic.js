@@ -1082,8 +1082,11 @@
         }
 
         // Setup gallery to show the first image
-        if (initFirstImage)
+        if (initFirstImage) {
             this.gotoIndex(0, false, true);
+        } else {
+            $(window).trigger('hashchange');
+        }
 
         // Setup Keyboard Navigation
         if (this.enableKeyboardNavigation) {
