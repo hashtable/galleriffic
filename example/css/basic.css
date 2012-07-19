@@ -58,7 +58,8 @@ div#page {
   padding: 20px;
 }
 
-div#footer {
+footer {
+  display: block;
   clear: both;
   color: #777;
   margin: 0 auto;
