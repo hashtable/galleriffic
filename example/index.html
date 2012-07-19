@@ -64,14 +64,14 @@
 &lt;div id="loading"&gt;&lt;/div&gt;
 &lt;div id="slideshow"&gt;&lt;/div&gt;
 &lt;div id="caption"&gt;&lt;/div&gt;
-&lt;div id="thumbs"&gt;
+&lt;nav id="thumbs"&gt;
   ... graceful degrading list of thumbnails (specific format specified below) ...
-&lt;/div&gt;
+&lt;/nav&gt;
             </pre>
           </li>
           <li>Within the thumbnails container element, build your graceful degrading unordered list of thumbnails linking to the image slides as such:
             <pre class="jush">
-&lt;div id="thumbs"&gt;
+&lt;nav id="thumbs"&gt;
   &lt;ul class="thumbs noscript"&gt;
     &lt;li&gt;
       &lt;a class="thumb" name="optionalCustomIdentifier" href="path/to/slide" title="your image title"&gt;
@@ -83,7 +83,7 @@
     &lt;/li&gt;
     ... (repeat for every image in the gallery)
   &lt;/ul&gt;
-&lt;/div&gt;
+&lt;/nav&gt;
             </pre>
             It is important to specify the 'thumb' class for the link that should serve as the thumbnail and the 'caption' class for
             the element that should serve as the caption.  When an image is selected for display in the slideshow, any elements with the 'caption' class will be rendered within the specified caption container element above.
