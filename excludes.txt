@@ -1,5 +1,0 @@
-*.svn*
-*.DS_Store*
-*.zip
-*.sh
-*excludes.txt
